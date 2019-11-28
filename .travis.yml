@@ -15,6 +15,6 @@ deploy:
   skip-cleanup: true 
   github-token: $TRAVISCITOKEN  # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
   target-branch: gh-pages
-  local-dir: dist
+  local-dir: dist/Angular-CITest
   on:
     branch: master
