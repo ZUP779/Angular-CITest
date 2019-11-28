@@ -8,5 +8,5 @@ install:
     - ng add angular-cli-ghpages
     
 script:
-    - echo "Skipping tests"
+    - echo "start ng deploy"
     - ng deploy --base-href=https://ZUP779.github.io/Angular-CITest/
