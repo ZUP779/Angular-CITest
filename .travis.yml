@@ -1,20 +1,21 @@
-language: node_js
+language: node_js   #使用node_js
 
 node_js:
-    - "10.16.3"
+    - "10.16.3"     #js版本
 
 install:
-    - npm install
-    - npm install -g @angular/cli
+    - npm install   #安装npm，如果没有其他需要安装的软件可以忽略这一条，travis会自动执行npm install
+    - npm install -g @angular/cli   #安装angular cli
 script:
-    - echo "skipping tests"
-    - ng build --prod --base-href https://ZUP779.github.io/Angular-CITest/
+    - echo "skipping tests" #
+    - ng build --prod --base-href https://ZUP779.github.io/Angular-CITest/  
+            #ng build指令会将成品build到根目录下的/dist目录，base-href格式为https://[用户名].github.io/[项目名]/  
     
-deploy:
+deploy: #travis提供了许多常见平台的部署，这里部署到github pages上
   provider: pages
-  skip-cleanup: true 
-  github-token: $TRAVISCITOKEN  # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
-  target-branch: gh-pages
-  local-dir: dist/Angular-CITest
-  on:
+  skip-cleanup: true    #不设为true可能导致，travis测试时，新push到仓库的代码被误删
+  github-token: $TRAVISCITOKEN  # 需要github-token，该项设置在travis网站中
+  target-branch: gh-pages       # github pages默认使用该分支作为源，因此将生成的文件推到该分支上
+  local-dir: dist/Angular-CITest    #设定将哪些文件push到gh-pages分支中
+  on:   #当master分支push时触发
     branch: master

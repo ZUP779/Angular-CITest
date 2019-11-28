@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-CITest';
+
+  lula() {
+    alert("let's lula lula la");
+  }
 }
