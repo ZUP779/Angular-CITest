@@ -5,14 +5,14 @@ node_js:
 
 install:
     - npm install
-    - npm run generate
+    - npm run generate:gh-pages
     
 script:
     - echo "skipping tests"
     
 deploy:
   provider: pages
-  skip-cleanup: true
+  skip-cleanup: true 
   github-token: $TRAVISCITOKEN  # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
   target-branch: gh-pages
   local-dir: dist
