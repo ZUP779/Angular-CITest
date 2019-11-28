@@ -5,10 +5,10 @@ node_js:
 
 install:
     - npm install
-    - npm run generate:gh-pages
-    
+    - npm install -g @angular/cli
 script:
     - echo "skipping tests"
+    - ng build --prod --base-href https://ZUP779.github.io/Angular-CITest/
     
 deploy:
   provider: pages
